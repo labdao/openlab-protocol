@@ -1,0 +1,13 @@
+{
+    "name": "@labdao/openlab-api-schemas-rest",
+    "version": "0.0.1",
+    "dependencies": {
+        "@redocly/openapi-cli": "^1.0.0-beta.85"
+    },
+    "private": false,
+    "scripts": {
+        "start": "openapi preview-docs",
+        "build": "openapi bundle -o dist",
+        "test": "openapi lint"
+    }
+}

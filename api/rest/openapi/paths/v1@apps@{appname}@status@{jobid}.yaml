@@ -1,0 +1,31 @@
+get:
+  tags:
+    - openlab
+  summary: Get job metadata and status
+  operationId: get_job_status
+  parameters:
+    - required: true
+      schema:
+        title: Appname
+        type: string
+      name: appname
+      in: path
+    - required: true
+      schema:
+        title: Jobid
+        type: string
+      name: jobid
+      in: path
+  responses:
+    '200':
+      description: Job metadata and status
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Job.yaml
+    '422':
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HTTPValidationError.yaml

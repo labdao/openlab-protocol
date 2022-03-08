@@ -1,0 +1,32 @@
+title: Job
+required:
+  - appname
+  - jobid
+type: object
+properties:
+  appname:
+    title: Appname
+    type: string
+  inputs:
+    title: Inputs
+    type: array
+    items:
+      type: object
+  parameters:
+    title: Parameters
+    type: object
+  jobid:
+    title: Jobid
+    type: string
+  created_at:
+    title: Created At
+    type: string
+    format: date-time
+  status:
+    title: Status
+    type: string
+  outputs:
+    title: Outputs
+    type: array
+    items: {}
+description: An Openlab job

@@ -1,0 +1,15 @@
+title: JobRequest
+type: object
+properties:
+  appname:
+    title: Appname
+    type: string
+  inputs:
+    title: Inputs
+    type: array
+    items:
+      type: object
+  parameters:
+    title: Parameters
+    type: object
+description: a Request for an Openlab job

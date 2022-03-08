@@ -1,0 +1,19 @@
+title: App
+type: object
+properties:
+  appname:
+    title: Appname
+    type: string
+  description:
+    title: Description
+    type: string
+  version:
+    title: Version
+    type: string
+  endpoints:
+    title: Endpoints
+    type: array
+    items:
+      type: string
+description: >-
+  App - an application in the Openlab network

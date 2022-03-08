@@ -1,0 +1,17 @@
+get:
+  tags:
+    - openlab
+  summary: List apps available on this service
+  operationId: list_apps
+  responses:
+    '200':
+      description: List of apps available on this service
+      content:
+        application/json:
+          schema:
+            title: Response 200 List Apps V1 Apps Get
+            type: array
+            items:
+              $ref: ../components/schemas/App.yaml
+    '404':
+      description: List of apps can't be found

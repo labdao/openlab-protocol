@@ -1,0 +1,19 @@
+openapi: 3.0.2
+info:
+  title: OpenLab App Service REST API
+  description: This is a sample OpenLab application service REST API
+  version: 0.0.1
+  license: 
+    name: CC0 1.0
+    url: https://creativecommons.org/publicdomain/zero/1.0/
+servers:
+  - url: https://api.openlab.run 
+paths:
+  '/v1/apps/{appname}':
+    $ref: 'paths/v1@apps@{appname}.yaml'
+  '/v1/apps/{appname}/status/{jobid}':
+    $ref: 'paths/v1@apps@{appname}@status@{jobid}.yaml'
+  /v1/apps:
+    $ref: paths/v1@apps.yaml
+  '/v1/apps/{appname}/submit':
+    $ref: 'paths/v1@apps@{appname}@submit.yaml'

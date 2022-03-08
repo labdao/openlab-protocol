@@ -1,0 +1,30 @@
+post:
+  tags:
+    - openlab
+  summary: 'Submit a new job request, receive job metadata and status'
+  operationId: submit_job
+  parameters:
+    - required: true
+      schema:
+        title: Appname
+        type: string
+      name: appname
+      in: path
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/JobRequest.yaml
+  responses:
+    '200':
+      description: Job metadata and status
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Job.yaml
+    '422':
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HTTPValidationError.yaml
