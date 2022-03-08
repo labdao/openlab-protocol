@@ -1,0 +1,29 @@
+{
+    "name": "@labdao/openlab-protocol",
+    "version": "0.0.1",
+    "description": "Specs, schemas, types, utilities, and documentation for the Openlab protocol",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/labdao/openlab-protocol.git"
+    },
+    "keywords": [
+        "labdao",
+        "openlab",
+        "protocol",
+        "schema",
+        "openapi",
+        "jsonschema",
+        "types",
+        "typescript"
+    ],
+    "author": "Rik Smith-Unna <rik@labdao.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/labdao/openlab-protocol/issues"
+    },
+    "homepage": "https://protocol.openlab.tools"
+}
