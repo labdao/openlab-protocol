@@ -2,26 +2,22 @@
 <html>
 
 <head>
-    <title>Openlab API reference</title>
-    <!-- needed for adaptive design -->
+    <title>Openlab applayer API docs</title>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="favicon.png">
-
-    <!--
-    ReDoc uses font options from the parent element
-    So override default browser styles
-    -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
         }
     </style>
-    {{{redocHead}}}
 </head>
 
 <body>
-    {{{redocHTML}}}
+    <redoc spec-url='https://raw.githubusercontent.com/labdao/openlab-protocol/main/api/rest/dist.yaml'></redoc>
+    <script src="https://cdn.jsdelivr.net/npm/redoc@latest/bundles/redoc.standalone.js">
+    </script>
 </body>
 
 </html>
