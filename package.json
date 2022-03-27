@@ -4,7 +4,8 @@
     "description": "Specs, schemas, types, utilities, and documentation for the Openlab protocol",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "diagrams:generate": "tplant"
     },
     "repository": {
         "type": "git",
@@ -25,5 +26,11 @@
     "bugs": {
         "url": "https://github.com/labdao/openlab-protocol/issues"
     },
-    "homepage": "https://protocol.openlab.tools"
+    "homepage": "https://protocol.openlab.tools",
+    "devDependencies": {
+        "quicktype": "^15.0.260"
+    },
+    "dependencies": {
+        "tplant": "^3.1.0"
+    }
 }
