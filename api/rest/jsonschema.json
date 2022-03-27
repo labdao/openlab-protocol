@@ -1,0 +1,307 @@
+{
+  "/v1/apps/{appname}": {
+    "get": {
+      "responses": {
+        "200": {
+          "title": "App",
+          "type": "object",
+          "properties": {
+            "appname": {
+              "title": "Appname",
+              "type": "string"
+            },
+            "description": {
+              "title": "Description",
+              "type": "string"
+            },
+            "version": {
+              "title": "Version",
+              "type": "string"
+            },
+            "endpoints": {
+              "title": "Endpoints",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "description": "App - an application in the Openlab network",
+          "$schema": "http://json-schema.org/draft-04/schema#"
+        },
+        "422": {
+          "title": "HTTPValidationError",
+          "type": "object",
+          "properties": {
+            "detail": {
+              "title": "Detail",
+              "type": "array",
+              "items": {
+                "title": "ValidationError",
+                "required": [
+                  "loc",
+                  "msg",
+                  "type"
+                ],
+                "type": "object",
+                "properties": {
+                  "loc": {
+                    "title": "Location",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "msg": {
+                    "title": "Message",
+                    "type": "string"
+                  },
+                  "type": {
+                    "title": "Error Type",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "$schema": "http://json-schema.org/draft-04/schema#"
+        }
+      }
+    }
+  },
+  "/v1/apps/{appname}/status/{jobid}": {
+    "get": {
+      "responses": {
+        "200": {
+          "title": "Job",
+          "required": [
+            "appname",
+            "jobid"
+          ],
+          "type": "object",
+          "properties": {
+            "appname": {
+              "title": "Appname",
+              "type": "string"
+            },
+            "inputs": {
+              "title": "Inputs",
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "parameters": {
+              "title": "Parameters",
+              "type": "object"
+            },
+            "jobid": {
+              "title": "Jobid",
+              "type": "string"
+            },
+            "created_at": {
+              "title": "Created At",
+              "type": "string",
+              "format": "date-time"
+            },
+            "status": {
+              "title": "Status",
+              "type": "string"
+            },
+            "outputs": {
+              "title": "Outputs",
+              "type": "array"
+            }
+          },
+          "description": "An Openlab job",
+          "$schema": "http://json-schema.org/draft-04/schema#"
+        },
+        "422": {
+          "title": "HTTPValidationError",
+          "type": "object",
+          "properties": {
+            "detail": {
+              "title": "Detail",
+              "type": "array",
+              "items": {
+                "title": "ValidationError",
+                "required": [
+                  "loc",
+                  "msg",
+                  "type"
+                ],
+                "type": "object",
+                "properties": {
+                  "loc": {
+                    "title": "Location",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "msg": {
+                    "title": "Message",
+                    "type": "string"
+                  },
+                  "type": {
+                    "title": "Error Type",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "$schema": "http://json-schema.org/draft-04/schema#"
+        }
+      }
+    }
+  },
+  "/v1/apps": {
+    "get": {
+      "responses": {
+        "200": {
+          "title": "Response 200 List Apps V1 Apps Get",
+          "type": "array",
+          "items": {
+            "title": "App",
+            "type": "object",
+            "description": "App - an application in the Openlab network",
+            "properties": {
+              "appname": {
+                "title": "Appname",
+                "type": "string"
+              },
+              "description": {
+                "title": "Description",
+                "type": "string"
+              },
+              "version": {
+                "title": "Version",
+                "type": "string"
+              },
+              "endpoints": {
+                "title": "Endpoints",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "$schema": "http://json-schema.org/draft-04/schema#"
+        },
+        "404": {}
+      }
+    }
+  },
+  "/v1/apps/{appname}/submit": {
+    "post": {
+      "body": {
+        "title": "JobRequest",
+        "type": "object",
+        "properties": {
+          "appname": {
+            "title": "Appname",
+            "type": "string"
+          },
+          "inputs": {
+            "title": "Inputs",
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "parameters": {
+            "title": "Parameters",
+            "type": "object"
+          }
+        },
+        "description": "a Request for an Openlab job",
+        "$schema": "http://json-schema.org/draft-04/schema#"
+      },
+      "responses": {
+        "200": {
+          "title": "Job",
+          "required": [
+            "appname",
+            "jobid"
+          ],
+          "type": "object",
+          "properties": {
+            "appname": {
+              "title": "Appname",
+              "type": "string"
+            },
+            "inputs": {
+              "title": "Inputs",
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "parameters": {
+              "title": "Parameters",
+              "type": "object"
+            },
+            "jobid": {
+              "title": "Jobid",
+              "type": "string"
+            },
+            "created_at": {
+              "title": "Created At",
+              "type": "string",
+              "format": "date-time"
+            },
+            "status": {
+              "title": "Status",
+              "type": "string"
+            },
+            "outputs": {
+              "title": "Outputs",
+              "type": "array"
+            }
+          },
+          "description": "An Openlab job",
+          "$schema": "http://json-schema.org/draft-04/schema#"
+        },
+        "422": {
+          "title": "HTTPValidationError",
+          "type": "object",
+          "properties": {
+            "detail": {
+              "title": "Detail",
+              "type": "array",
+              "items": {
+                "title": "ValidationError",
+                "required": [
+                  "loc",
+                  "msg",
+                  "type"
+                ],
+                "type": "object",
+                "properties": {
+                  "loc": {
+                    "title": "Location",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "msg": {
+                    "title": "Message",
+                    "type": "string"
+                  },
+                  "type": {
+                    "title": "Error Type",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "$schema": "http://json-schema.org/draft-04/schema#"
+        }
+      }
+    }
+  }
+}
