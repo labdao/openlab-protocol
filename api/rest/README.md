@@ -12,8 +12,8 @@
 #### `npm start`
 Starts the reference docs preview server.
 
-#### `npm run build`
-Bundles the definition to the dist folder.
+#### `npm build:all`
+Generates `.yaml`, `.json`, and `.ts` versions of the full API schema in `generated/`.
 
 #### `npm test`
 Validates the definition.
