@@ -7,8 +7,11 @@
     "private": false,
     "scripts": {
         "start": "openapi preview-docs",
-        "build": "openapi bundle -o dist",
-        "test": "openapi lint"
+        "test": "openapi lint",
+        "build:all": "yarn build:json && yarn build:ts && yarn build:yaml",
+        "build:json": "openapi bundle -o generated/api.json --ext json",
+        "build:ts": "openapi bundle -o /tmp/tmp-api.yaml && npx openapi-typescript /tmp/tmp-api.yaml -o generated/types.ts --version 3 && rm /tmp/tmp-api.yaml",
+        "build:yaml": "openapi bundle -o generated/api.yaml"
     },
     "devDependencies": {
         "redoc": "^2.0.0-rc.64"
